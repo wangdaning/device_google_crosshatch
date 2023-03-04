@@ -141,3 +141,7 @@ PRODUCT_PRODUCT_PROPERTIES += \
 # Enable zygote critical window.
 PRODUCT_PROPERTY_OVERRIDES += \
     zygote.critical_window.minute=10
+
+# Elmyra
+PRODUCT_PACKAGES += \
+    ElmyraService

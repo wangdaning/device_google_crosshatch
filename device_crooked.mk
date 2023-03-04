@@ -1,5 +1,7 @@
+
+
 #
-# Copyright 2015 The Android Open Source Project
+# Copyright (C) 2022 Crooked Android
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,15 +16,8 @@
 # limitations under the License.
 #
 
-PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/crooked_crosshatch.mk \
-    $(LOCAL_DIR)/crooked_blueline.mk \
-    $(LOCAL_DIR)/aosp_crosshatch_hwasan.mk \
-    $(LOCAL_DIR)/aosp_blueline_hwasan.mk \
-    $(LOCAL_DIR)/vf/aosp_crosshatch_vf.mk 
+DEVICE_PACKAGE_OVERLAYS += device/google/crosshatch/overlay-crooked
 
-COMMON_LUNCH_CHOICES := \
-    crooked_crosshatch-userdebug \
-    crooked_blueline-userdebug \
-    crooked_crosshatch-user \
-    crooked_blueline-user
+# For Google Camera
+PRODUCT_COPY_FILES += \
+    device/google/crosshatch/the_experiences.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/the_experiences.xml

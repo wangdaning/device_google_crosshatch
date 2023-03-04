@@ -52,11 +52,11 @@ PRODUCT_COPY_FILES += $(LOCAL_PATH)/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/
 # b/189477034: Bypass build time check on uses_libs until vendor fixes all their apps
 PRODUCT_BROKEN_VERIFY_USES_LIBRARIES := true
 
-# Inherit some common PixelExperience stuff.
+# Inherit some common Crooked stuff.
 TARGET_BOOT_ANIMATION_RES := 1080
 TARGET_GAPPS_ARCH := arm64
 TARGET_SUPPORTS_QUICK_TAP := true
-$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
+$(call inherit-product, vendor/crooked/config/common_full_phone.mk)
 
 # Inherit device configuration
 -include device/google/crosshatch/device-custom.mk
@@ -73,10 +73,4 @@ PRODUCT_DEVICE := blueline
 PRODUCT_BRAND := google
 PRODUCT_MODEL := Pixel 3
 
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRODUCT_NAME=blueline \
-    PRIVATE_BUILD_DESC="blueline-user 12 SP1A.210812.016.C2 8618562 release-keys"
-
-BUILD_FINGERPRINT := google/blueline/blueline:12/SP1A.210812.016.C2/8618562:user/release-keys
-
-$(call inherit-product, vendor/google/blueline/blueline-vendor.mk)
+$(call inherit-product, vendor/google/crosshatch/crosshatch-vendor.mk)
